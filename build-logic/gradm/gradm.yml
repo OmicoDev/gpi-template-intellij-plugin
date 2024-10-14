@@ -1,0 +1,35 @@
+versions:
+  consensus: "0.15.0"
+  gradle: "8.10.2"
+  kotlin: "1.9.24"
+  plugins:
+    develocity: "3.18.1"
+    intellij: "2.1.0"
+    spotless: "7.0.0.BETA1"
+
+repositories:
+  omico:
+  mavenCentral:
+  gradlePluginPortal:
+
+plugins:
+  gradlePluginPortal:
+    com.diffplug.spotless: ${versions.plugins.spotless}
+    com.gradle.develocity: ${versions.plugins.develocity}
+
+dependencies:
+  gradlePluginPortal:
+    org.jetbrains.intellij.platform:
+      intellij-platform-gradle-plugin:
+        alias: intellijPlatformGradlePlugin
+        version: ${versions.plugins.intellij}
+  mavenCentral:
+    org.jetbrains.kotlin:
+      kotlin-gradle-plugin:
+        alias: kotlinGradlePlugin
+        version: ${versions.kotlin}
+  omico:
+    me.omico.consensus:
+      consensus-gradle-plugins:
+        alias: consensusGradlePlugins
+        version: ${versions.consensus}
